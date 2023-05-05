@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Guess the number</title>
+  <script>
+    const maxGuesses = 10;
+    let guesses = 0;
+
+    const number = Math.floor(Math.random() * 100) + 1;
+    console.log("Guess a number between 1 and 100.");
+
+    while (guesses < maxGuesses) {
+      const guess = parseInt(prompt("Guess:"));
+
+      if (isNaN(guess)) {
+        console.log("Invalid input. Please enter a number.");
+        continue;
+      }
+
+      guesses++;
+
+      if (guess === number) {
+        console.log(`Congratulations! You guessed the number in ${guesses} guesses.`);
+        break;
+      } else if (guess < number) {
+        console.log("Too low. Guess again.");
+      } else {
+        console.log("Too high. Guess again.");
+      }
+    }
+
+    if (guesses === maxGuesses) {
+      console.log(`Sorry, you didn't guess the number in ${maxGuesses} guesses. The number was ${number}.`);
+    }
+  </script>
+</head>
+<body>
+  <h1>Guess the number</h1>
+  <p>Open the browser console to play the game.</p>
+</body>
+</html>
