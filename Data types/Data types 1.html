@@ -1,0 +1,50 @@
+
+<!-- //1. Write a program that asks the user to enter their birth year and then 
+//calculates their age based on the current year. To do this, .
+//you will need to use the number data type, the Date object, and some basic math operations in JavaScript. -->
+
+<html>  
+<head>  
+<script>  
+function ageCalculator() {  
+    var userinput = document.getElementById("DOB").value;  
+    var dob = new Date(userinput);  
+    if(userinput==null || userinput=='') {  
+      document.getElementById("message").innerHTML = "**Choose a date please!";    
+      return false;   
+    } else {  
+      
+    //calculate month difference from current date in time  
+    var month_diff = Date.now() - dob.getTime();  
+      
+    //convert the calculated difference in date format  
+    var age_dt = new Date(month_diff);   
+      
+    //extract year from date      
+    var year = age_dt.getUTCFullYear();  
+      
+    //now calculate the age of the user  
+    var age = Math.abs(year - 1970);  
+      
+    //display the calculated age  
+    return document.getElementById("result").innerHTML =    
+             "You are at: " + age + " years. ";  
+    }  
+}  
+</script>  
+</head>  
+<body>  
+<center>  
+<h2 style="color: 32A80F" align="center"> Age calculator <br> <br> </h2>   
+  
+<!-- Choose a date and enter in input field -->  
+<b> Choose Date of Birth: <input type=date id = DOB> </b>  
+<span id = "message" style="color:rgb(123, 0, 255)"> </span> <br><br>    
+  
+<!-- Choose a date and enter in input field -->  
+<button type="submit" onclick = "ageCalculator()"> Calculate age </button> <br><br>  
+<h3 style="color:32A80F" id="result" align="center"></h3>   
+</center>  
+</body>  
+</html>  
+

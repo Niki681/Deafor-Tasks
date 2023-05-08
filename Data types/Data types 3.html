@@ -1,0 +1,32 @@
+
+<!-- 3. Create a program that asks the user to enter their name and age, 
+//and then prints out a message that says "Hello, [name]! You are [age] years old." 
+//To accomplish this, you will need to use the string and number data types in JavaScript. ---->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Age and Name Page</title>
+</head>
+<body>
+  <h1>Enter Your Name and Age</h1>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br>
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age"><br>
+    <button type="button" onclick="displayMessage()">Submit</button>
+  </form>
+
+  <script>
+    function displayMessage() {
+      let name = document.getElementById("name").value;
+      let age = parseInt(document.getElementById("age").value);
+      let message = `Hello, ${name}! You are ${age} years old.`;
+      document.getElementById("output").textContent = message;
+    }
+  </script>
+
+  <div id="output"></div>
+</body>
+</html>
+
