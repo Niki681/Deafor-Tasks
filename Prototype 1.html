@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bank Account Example</title>
+  </head>
+  <body>
+    <h1>Bank Account Example</h1>
+    <p>Current Balance: <span id="balance"></span></p>
+    <form>
+      <label for="amountToAdd">Add Amount:</label>
+      <input type="number" id="amountToAdd" name="amountToAdd">
+      <button type="button" onclick="addAmount()">Add</button>
+      <br>
+      <label for="amountToWithdraw">Withdraw Amount:</label>
+      <input type="number" id="amountToWithdraw" name="amountToWithdraw">
+      <button type="button" onclick="withdrawAmount()">Withdraw</button>
+    </form>
+    <div id="message"></div>
+    <script>
+      let amount = 500;
+
+      const bankAccount = {
+        value: amount,
+        add(amountToAdd) {
+          this.value += amountToAdd;
+        },
+        withdraw(amountToWithdraw) {
+          if (amountToWithdraw > this.value) {
+            return false;
+          } else {
+            this.value -= amountToWithdraw;
+            return true;
+          }
+        }
+      };
+
+      function updateBalance() {
+        const balanceEl = document.getElementById("balance");
+        balanceEl.textContent = bankAccount.value;
+      }
+
+      function addAmount() {
+        const amountToAddEl = document.getElementById("amountToAdd");
+        const amountToAdd = parseFloat(amountToAddEl.value);
+        bankAccount.add(amountToAdd);
+        updateBalance();
+      }
+
+      function withdrawAmount() {
+        const amountToWithdrawEl = document.getElementById("amountToWithdraw");
+        const amountToWithdraw = parseFloat(amountToWithdrawEl.value);
+        const success = bankAccount.withdraw(amountToWithdraw);
+        if (success) {
+          updateBalance();
+          const messageEl = document.getElementById("message");
+          messageEl.textContent = "";
+        } else {
+          const messageEl = document.getElementById("message");
+          messageEl.textContent = "Not enough money to withdraw.";
+        }
+      }
+
+      updateBalance();
+    </script>
+  </body>
+</html>
