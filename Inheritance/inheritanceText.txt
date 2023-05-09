@@ -1,0 +1,27 @@
+<!---
+Build an e-commerce application that sells different types of products with varying properties,
+ such as price, size, and color. The application should use inheritance to create a base product 
+ class that contains the shared properties and methods of all products, and then create subclasses 
+ that inherit from the base class and add their own unique properties and methods.
+
+To accomplish this, you should start by creating a Product class with properties such as 
+price, size, and color. This class should also contain methods that all products will have,
+ such as a method to display the product information.
+
+Next, you should create subclasses for each type of product that you want to sell,
+ such as Clothing, Electronics, or Books. These subclasses should inherit from 
+ the Product class and add their own unique properties and methods. 
+ For example, the Clothing class might have a size property and a method to calculate 
+ the appropriate size based on the user's measurements.
+
+Once you have created the necessary classes, you can use them to create 
+instances of each product type in your e-commerce application. 
+You should provide a way for users to view the available products, add them to a shopping cart, and make a purchase.
+
+This task will help you understand how to use inheritance in JavaScript 
+to create classes with shared properties and methods, as well as how to create 
+subclasses that inherit from a base class and add their own unique properties and methods.
+ It will also give you practice in building a simple e-commerce application, which is a common
+  use case for web development.
+
+-->
