@@ -17,3 +17,6 @@ console.log(`My name is ${user.name}, I am ${user.age} years old, and I work as 
 
 
 
+for (let property in user) {
+  console.log(`${property}: ${user[property]}`);
+}
