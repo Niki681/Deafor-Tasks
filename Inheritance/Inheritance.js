@@ -57,9 +57,9 @@ class Product {
   
   // Example usage of the classes:
   
-  const tshirt = new Clothing(25, 'M', 'red', 'male');
-  tshirt.displayInfo(); // Output: Price: $25
-                        //         Size: M
+  const tshirt = new Clothing(55, 'M', 'red', 'male');
+  tshirt.displayInfo(); // Output: Price: $55
+                        //         Size: XXL
                         //         Color: red
   tshirt.calculateSize(); 
   
@@ -69,8 +69,8 @@ class Product {
                          //         Color: silver
   laptop.getWarranty(); // calls Electronics's getWarranty method
   
-  const book = new Books(15, 'paperback', 'green', 'J.K.Rowling');
-  book.displayInfo(); // Output: Price: $15
-                       //         Size: paperback
-                       //         Color: green
+  const book = new Books(35, 'paper', 'black', 'J.K.Rowling');
+  book.displayInfo(); // Output: Price: $35
+                       //         Size: paper
+                       //         Color: black
   book.getSummary();
