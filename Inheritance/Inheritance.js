@@ -57,17 +57,17 @@ class Product {
   
   // Example usage of the classes:
   
-  const tshirt = new Clothing(55, 'M', 'red', 'male');
-  tshirt.displayInfo(); // Output: Price: $55
+  const sweater = new Clothing(55, 'XXL', 'red', 'male');
+  sweater.displayInfo(); // Output: Price: $55
                         //         Size: XXL
                         //         Color: red
-  tshirt.calculateSize(); 
+    sweater.calculateSize(); 
   
-  const laptop = new Electronics(950, '15.6-inch', 'silver', 'Apple');
-  laptop.displayInfo(); // Output: Price: $950
+  const computer = new Electronics(950, '15.6-inch', 'silver', 'Apple');
+  computer.displayInfo(); // Output: Price: $950
                          //         Size: 15.6-inch
                          //         Color: silver
-  laptop.getWarranty(); // calls Electronics's getWarranty method
+  computer.getWarranty(); // calls Electronics's getWarranty method
   
   const book = new Books(35, 'paper', 'black', 'J.K.Rowling');
   book.displayInfo(); // Output: Price: $35
