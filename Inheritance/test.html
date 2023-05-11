@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Online Store</title>
+  </head>
+  <body>
+    <h1>Welcome to our online store!</h1>
+    <h2>Products:</h2>
+    <ul>
+      <li>
+        <h3>Clothing</h3>
+        <p>Price: $55</p>
+        <p>Size: XXL</p>
+        <p>Color: Red</p>
+        <button onclick="addToBasket('clothing', 55)">Add to basket</button>
+      </li>
+      <li>
+        <h3>Electronics</h3>
+        <p>Price: $950</p>
+        <p>Size: 15.6-inch</p>
+        <p>Color: Silver</p>
+        <button onclick="addToBasket('electronics', 950)">Add to basket</button>
+      </li>
+      <li>
+        <h3>Books</h3>
+        <p>Price: $35</p>
+        <p>Size: Paper</p>
+        <p>Color: Black</p>
+        <button onclick="addToBasket('books', 35)">Add to basket</button>
+      </li>
+    </ul>
+
+    <h2>Basket:</h2>
+    <ul id="basket"></ul>
+    <p>Total Price: $<span id="totalPrice">0</span></p>
+
+    <script>
+      let basket = [];
+
+      function addToBasket(itemName, itemPrice) {
+        basket.push({ name: itemName, price: itemPrice });
+        updateBasket();
+      }
+
+      function updateBasket() {
+        const basketEl = document.getElementById("basket");
+        basketEl.innerHTML = "";
+        for (let item of basket) {
+          const liEl = document.createElement("li");
+          liEl.textContent = `${item.name}: $${item.price}`;
+          basketEl.appendChild(liEl);
+        }
+        updateTotalPrice();
+      }
+
+      function updateTotalPrice() {
+        const totalPriceEl = document.getElementById("totalPrice");
+        let totalPrice = 0;
+        for (let item of basket) {
+          totalPrice += item.price;
+        }
+        totalPriceEl.textContent = totalPrice;
+      }
+    </script>
+  </body>
+</html>
