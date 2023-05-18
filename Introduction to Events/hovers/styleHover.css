@@ -1,0 +1,17 @@
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image {
+    width: 200px;
+    height: 200px;
+    transition: all 0.3s;
+  }
+
+  .image:hover {
+    transform: scale(1.2);
+  }

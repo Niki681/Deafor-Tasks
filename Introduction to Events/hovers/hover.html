@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="./styleHover.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="image-container">
+    <img class="image" src="./image/img_5terre.jpg">
+    <img class="image" src="./image/img_5terre.jpg">
+    <img class="image" src="./image/img_5terre.jpg">
+    <img class="image" src="./image/img_forest.jpg">
+    <img class="image" src="./image/img_forest.jpg">
+    <img class="image" src="./image/img_forest.jpg">
+    <img class="image" src="./image/img_mountains.jpg">
+    <img class="image" src="./image/img_mountains.jpg">
+    <img class="image" src="./image/img_mountains.jpg">
+  </div>
+
+  <script>document.addEventListener('DOMContentLoaded', function() {
+    var images = document.getElementsByClassName('image');
+  
+    for (var i = 0; i < images.length; i++) {
+      images[i].addEventListener('mouseover', function() {
+        this.style.filter = 'brightness(50%)';
+      });
+  
+      images[i].addEventListener('mouseout', function() {
+        this.style.filter = 'brightness(100%)';
+      });
+    }
+  });</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Click Counter</title>
+</head>
+<body>
+	<h1>Click Counter</h1>
+	<p>Click the button to increment the counter:</p>
+	<button id="countBtn">0</button>
+
+	<script>
+		// Get the button element
+		var countBtn = document.getElementById("countBtn");
+
+		// Set the initial count to 0
+		var count = 0;
+
+		// Add event listener to button
+		countBtn.addEventListener("click", function() {
+			// Increment the count
+			count++;
+
+			// Update the text on the button
+			countBtn.innerHTML = count;
+		});
+	</script>
+</body>
+</html>
